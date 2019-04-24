@@ -1,7 +1,7 @@
 const util = require('util');
 const path = require('path');
 const readDir = util.promisify(require('fs').readdir);
-const fileCreated = require('./file-created');
+const fileCreated = require('./fileCreated');
 
 module.exports = async function(directory) {
   try {

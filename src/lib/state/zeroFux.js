@@ -1,5 +1,5 @@
-const { appRoot } = require('../app-root');
-const electonStore = require('../electron-store');
+const { appRoot } = require('../appRoot');
+const electonStore = require('../electronStore');
 const reducers = require('./reducers');
 
 // Initial state.
@@ -31,7 +31,7 @@ dispatchWithAppRoot({ type: 'stateUpdate', payload: global.state });
 // Subscribe the reducers;
 Object.keys(reducers).forEach(actionType => {
   appRoot.on(actionType, ({ detail: action }) => {
-    global.state = reducers[actionType](state, action);
+    global.state = reducers[actionType](global.state, action);
     dispatchWithAppRoot({ type: 'stateUpdate', payload: global.state });
   });
 });

@@ -2,7 +2,7 @@ const { html, Component } = require('htm/preact');
 const directoryListing = require('../lib/file-system/directory-listing');
 const debounce = require('../lib/debounce');
 const { dispatch } = require('../lib/state/zero-fux');
-const FileList = require('./file-list');
+const FileList = require('./FileList');
 
 class FileNavigator extends Component {
   componentDidMount() {

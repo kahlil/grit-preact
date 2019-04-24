@@ -1,11 +1,13 @@
 const { html, Component } = require('htm/preact');
-const Editor = require('./editor');
-const FileNavigator = require('./file-navigator');
+
+const Editor = require('./Editor');
+const FileNavigator = require('./FileNavigator');
 const Notifications = require('./Notifications');
-const Settings = require('./settings');
-const Empty = require('./empty');
-const { appRoot } = require('../lib/app-root');
-const electronStore = require('../lib/electron-store');
+const Settings = require('./Settings');
+const Empty = require('./Empty');
+
+const { appRoot } = require('../lib/appRoot');
+const electronStore = require('../lib/electronStore');
 
 global.electronStore = electronStore;
 

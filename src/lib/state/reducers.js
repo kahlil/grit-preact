@@ -31,7 +31,7 @@ module.exports = {
     };
   },
 
-  openSettings(state, action) {
+  openSettings(state) {
     return {
       ...state,
       slot: {
