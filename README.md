@@ -1,0 +1,5 @@
+# Grit
+
+# License
+
+MIT
