@@ -1,11 +1,12 @@
 const path = require('path');
 const gitRootDir = require('git-root-dir');
 const git = require('simple-git/promise');
-const electronStore = require('../electron-store');
-const readFile = require('../file-system/read-file');
-const { dispatch } = require('./zero-fux');
-const writeFile = require('../file-system/write-file');
-const template = require('../template-new-post');
+
+const electronStore = require('../electronStore');
+const readFile = require('../fs/readFile');
+const { dispatch } = require('./zeroFux');
+const writeFile = require('../fs/writeFile');
+const template = require('../template');
 const date = require('../yyyy-mm-dd');
 
 const run = appRoot => {

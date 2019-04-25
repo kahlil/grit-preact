@@ -1,11 +1,17 @@
 const { html } = require('htm/preact');
+const CloseButton = require('./CloseButton');
 
 const ListButton = ({ handleClick, action, buttonText }) => {
   return html`
     <li>
-      <button onClick=${event => handleClick(event)} data-action=${action}>
+      <button
+        class="list-button"
+        onClick=${event => handleClick(event)}
+        data-action=${action}
+      >
         ${buttonText}
       </button>
+      <${CloseButton} />
     </li>
   `;
 };
@@ -15,15 +21,14 @@ const FileList = ({ fileNames, handleClick }) => {
   return html`
     <section class="file-list">
       <ul>
-        ${noFiles && [
+        ${noFiles &&
           html`
             <${ListButton}
               handleClick=${handleClick}
               action="createFile"
               buttonText="create new"
             />
-          `,
-        ]}
+          `}
         ${!noFiles &&
           fileNames.map(
             fileName =>

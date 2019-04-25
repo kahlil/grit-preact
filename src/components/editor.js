@@ -1,14 +1,10 @@
 const { html, Component } = require('htm/preact');
 const CodeMirror = require('codemirror');
-const debounce = require('../lib/debounce');
-const { dispatch } = require('../lib/state/zero-fux');
 
-const CloseButton = ({ onClickHandler }) =>
-  html`
-    <button class="close-button" onClick=${onClickHandler}>
-      <span class="close-button--x">×</span>
-    </button>
-  `;
+const CloseButton = require('./CloseButton');
+
+const debounce = require('../lib/debounce');
+const { dispatch } = require('../lib/state/zeroFux');
 
 class Editor extends Component {
   componentDidMount() {
@@ -50,7 +46,7 @@ class Editor extends Component {
   render() {
     return html`
       <div class="editor">
-        <${CloseButton} onClickHandler=${this.onCloseButtonClickHandler} />
+        <${CloseButton} clickHandler=${this.onCloseButtonClickHandler} />
         <div class="editor__saved-indicator">✔️saved</div>
         <div ref=${editorEl => (this.editorEl = editorEl)} />
       </div>

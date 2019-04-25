@@ -3,13 +3,15 @@
 // All of the Node.js APIs are available in this process.
 require('codemirror/mode/yaml-frontmatter/yaml-frontmatter');
 require('codemirror/mode/gfm/gfm');
+
 const { ipcRenderer } = require('electron');
 const { html, render } = require('htm/preact');
 const hotkeys = require('hotkeys-js');
-const App = require('./components/app');
-const { appRoot } = require('./lib/app-root');
+
+const App = require('./components/App');
+const { appRoot } = require('./lib/appRoot');
 const effects = require('./lib/state/effects');
-const { dispatch } = require('./lib/state/zero-fux');
+const { dispatch } = require('./lib/state/zeroFux');
 
 // Hotkeys.
 hotkeys('command+o', () => dispatch({ type: 'openFileNavigator' }));

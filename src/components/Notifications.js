@@ -1,5 +1,5 @@
 const { html, Component } = require('htm/preact');
-const { dispatch } = require('../lib/state/zero-fux');
+const { dispatch } = require('../lib/state/zeroFux');
 const timeout = require('../lib/timeout');
 
 // Notifcation component.

@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "rules": { "no-console": "off" },
+  "rules": { "no-console": "off", "no-unused-vars": "off" },
   "extends": ["eslint:recommended", "prettier"],
   "env": {
     "es6": true,
