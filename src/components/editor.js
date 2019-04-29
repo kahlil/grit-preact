@@ -22,13 +22,15 @@ class Editor extends Component {
           type: 'saveDocument',
           payload: this.codeMirrorEditor.getValue(),
         });
-        console.log(event, 'file has changed');
       }, 400)();
     });
 
     this.codeMirrorEditor.setOption('extraKeys', {
       'Cmd-O': () => {
         dispatch({ type: 'openFileNavigator' });
+      },
+      Esc: () => {
+        dispatch({ type: 'openEmpty' });
       },
     });
 

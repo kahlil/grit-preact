@@ -6,7 +6,7 @@ require('codemirror/mode/gfm/gfm');
 
 const { ipcRenderer } = require('electron');
 const { html, render } = require('htm/preact');
-const hotkeys = require('hotkeys-js');
+const mousetrap = require('mousetrap');
 
 const App = require('./components/App');
 const { appRoot } = require('./lib/appRoot');
@@ -14,9 +14,11 @@ const effects = require('./lib/state/effects');
 const { dispatch } = require('./lib/state/zeroFux');
 
 // Hotkeys.
-hotkeys('command+o', () => dispatch({ type: 'openFileNavigator' }));
-hotkeys('command+u', () => dispatch({ type: 'publishBlog' }));
-hotkeys('command+,', () => dispatch({ type: 'openSettings' }));
+mousetrap.bind('esc', () => dispatch({ type: 'openEmpty' }));
+mousetrap.bind('cmd+w', () => dispatch({ type: 'openEmpty' }));
+mousetrap.bind('cmd+o', () => dispatch({ type: 'openFileNavigator' }));
+mousetrap.bind('cmd+u', () => dispatch({ type: 'publishBlog' }));
+mousetrap.bind('cmd+,', () => dispatch({ type: 'openSettings' }));
 
 // Fire actions from main process.
 ipcRenderer.on('action', (_, action) => {

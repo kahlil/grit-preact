@@ -27,6 +27,7 @@ class FileNavigator extends Component {
         <div class="file-navigator__main">
           <section>
             <input
+              class="mousetrap"
               placeholder="type a file name"
               onKeyDown=${event => handleKeyPress(event)}
               ref=${input => (this.input = input)}

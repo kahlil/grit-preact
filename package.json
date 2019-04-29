@@ -43,11 +43,12 @@
   },
   "dependencies": {
     "codemirror": "5.46.0",
+    "electron-is-dev": "^1.1.0",
     "electron-squirrel-startup": "1.0.0",
     "electron-store": "3.2.0",
     "git-root-dir": "1.0.2",
-    "hotkeys-js": "3.6.2",
     "htm": "2.1.1",
+    "mousetrap": "^1.6.3",
     "preact": "8.4.2",
     "simple-git": "1.110.0",
     "user-home": "2.0.0"

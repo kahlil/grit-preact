@@ -4,8 +4,10 @@ try {
   console.error(err);
 }
 
+const isDev = require('electron-is-dev');
+
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -32,7 +34,9 @@ function createWindow() {
   mainWindow.loadFile('src/index.html');
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+  }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -40,13 +44,6 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
-  });
-
-  globalShortcut.register('Esc', () => {
-    mainWindow.webContents.send('action', { type: 'openEmpty' });
-  });
-  globalShortcut.register('Command+W', () => {
-    mainWindow.webContents.send('action', { type: 'openEmpty' });
   });
 }
 
