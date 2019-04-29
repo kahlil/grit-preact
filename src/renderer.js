@@ -13,12 +13,12 @@ const { appRoot } = require('./lib/appRoot');
 const effects = require('./lib/state/effects');
 const { dispatch } = require('./lib/state/zeroFux');
 
-// Hotkeys.
+// Keyboard shortcuts.
 mousetrap.bind('esc', () => dispatch({ type: 'openEmpty' }));
-mousetrap.bind('cmd+w', () => dispatch({ type: 'openEmpty' }));
-mousetrap.bind('cmd+o', () => dispatch({ type: 'openFileNavigator' }));
-mousetrap.bind('cmd+u', () => dispatch({ type: 'publishBlog' }));
-mousetrap.bind('cmd+,', () => dispatch({ type: 'openSettings' }));
+mousetrap.bind('command+w', () => dispatch({ type: 'openEmpty' }));
+mousetrap.bind('command+o', () => dispatch({ type: 'openFileNavigator' }));
+mousetrap.bind('command+u', () => dispatch({ type: 'publishBlog' }));
+mousetrap.bind('command+,', () => dispatch({ type: 'openSettings' }));
 
 // Fire actions from main process.
 ipcRenderer.on('action', (_, action) => {

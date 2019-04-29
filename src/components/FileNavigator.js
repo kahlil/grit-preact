@@ -20,6 +20,13 @@ class FileNavigator extends Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.show && prevProps.show !== this.props.show) {
+      this.input.focus();
+      this.input.value = '';
+    }
+  }
+
   render(props) {
     const handleKeyPress = debounce(event => this.handleInput(event), 100);
     return html`

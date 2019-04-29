@@ -10,7 +10,10 @@ const ListButton = ({ handleClick, action, buttonText }) => {
       <button class="list-button" onClick=${handleClick} data-action=${action}>
         ${buttonText}
       </button>
-      <${CloseButton} clickHandler=${handleCloseClick} />
+      ${action === 'openFile' &&
+        html`
+          <${CloseButton} clickHandler=${handleCloseClick} />
+        `}
     </li>
   `;
 };
