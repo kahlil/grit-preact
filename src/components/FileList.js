@@ -1,23 +1,22 @@
 const { html } = require('htm/preact');
+const { dispatch } = require('../lib/state/zeroFux');
 const CloseButton = require('./CloseButton');
 
 const ListButton = ({ handleClick, action, buttonText }) => {
+  const handleCloseClick = () =>
+    dispatch({ type: 'deleteFile', payload: buttonText });
   return html`
     <li>
-      <button
-        class="list-button"
-        onClick=${event => handleClick(event)}
-        data-action=${action}
-      >
+      <button class="list-button" onClick=${handleClick} data-action=${action}>
         ${buttonText}
       </button>
-      <${CloseButton} />
+      <${CloseButton} clickHandler=${handleCloseClick} />
     </li>
   `;
 };
 
-const FileList = ({ fileNames, handleClick }) => {
-  const noFiles = !fileNames || fileNames.length === 0;
+const FileList = ({ fileList, handleClick, handleCloseClick }) => {
+  const noFiles = !fileList || fileList.length === 0;
   return html`
     <section class="file-list">
       <ul>
@@ -25,12 +24,13 @@ const FileList = ({ fileNames, handleClick }) => {
           html`
             <${ListButton}
               handleClick=${handleClick}
+              handleCloseClick=${handleCloseClick}
               action="createFile"
               buttonText="create new"
             />
           `}
         ${!noFiles &&
-          fileNames.map(
+          fileList.map(
             fileName =>
               html`
                 <${ListButton}

@@ -5,35 +5,10 @@ const { dispatch } = require('../lib/state/zeroFux');
 const FileList = require('./FileList');
 
 class FileNavigator extends Component {
-  componentDidMount() {
-    this.getFileList();
-  }
-
-  componentDidUpdate(prevProps) {
-    const { pathToPosts, show } = this.props;
-    const isPathUpdated = prevProps.pathToPosts !== pathToPosts;
-    const wasMadeVisible = prevProps.show !== show && show === true;
-    if (isPathUpdated || wasMadeVisible) {
-      this.getFileList();
-    }
-  }
-
-  async getFileList() {
-    const directory = this.props.pathToPosts;
-    if (directory) {
-      const fileNames = await directoryListing(directory);
-      this.input.focus();
-      this.setState({ directory, fileNames, filteredFileNames: fileNames });
-    }
-  }
-
   handleInput() {
     if (!this.input) return;
     const input = this.input.value;
-    const filteredFileNames = input
-      ? this.state.fileNames.filter(fileName => fileName.includes(input))
-      : this.state.fileNames;
-    this.setState({ filteredFileNames });
+    dispatch({ type: 'filterFileList', payload: input });
   }
 
   handleFileListClick = event => {
@@ -58,7 +33,7 @@ class FileNavigator extends Component {
             />
           </section>
           <${FileList}
-            fileNames=${this.state.filteredFileNames}
+            fileList=${this.props.fileList}
             handleClick=${this.handleFileListClick}
           />
         </div>

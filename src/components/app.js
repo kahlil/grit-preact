@@ -34,12 +34,16 @@ class App extends Component {
         showFileNavigator,
         pathToPosts,
         notifications,
+        fileList,
+        fileListFiltered,
       } = action.payload;
       this.setState({
         slot: { ...slot },
-        showFileNavigator: showFileNavigator,
-        pathToPosts: pathToPosts,
-        notifications: notifications,
+        showFileNavigator,
+        pathToPosts,
+        notifications,
+        fileList,
+        fileListFiltered,
       });
     });
   }
@@ -49,7 +53,13 @@ class App extends Component {
   }
 
   render(_, state) {
-    const { notifications, showFileNavigator, pathToPosts, slot } = state;
+    const {
+      notifications,
+      showFileNavigator,
+      pathToPosts,
+      slot,
+      fileListFiltered,
+    } = state;
     return html`
       <div>
         <div class="drag-bar" />
@@ -57,6 +67,7 @@ class App extends Component {
         <${FileNavigator}
           show=${showFileNavigator}
           pathToPosts=${pathToPosts}
+          fileList=${fileListFiltered}
         />
         <div class=${showFileNavigator ? 'blurred' : ''}>
           <${routes[slot.component]} ...${slot.props} />

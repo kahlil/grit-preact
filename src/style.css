@@ -26,10 +26,12 @@ html {
   font-size: 18px;
   color: var(--color-font);
   background-color: var(--color-bg-main);
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 button {
@@ -285,4 +287,9 @@ button:hover {
 
 .blurred {
   filter: blur(4px);
+}
+
+.no-select {
+  pointer-events: none;
+  user-select: none;
 }

@@ -41,6 +41,14 @@ module.exports = {
     };
   },
 
+  receiveFileList(state, action) {
+    return {
+      ...state,
+      fileList: action.payload,
+      fileListFiltered: action.payload,
+    };
+  },
+
   openFile(state, action) {
     return {
       ...state,
@@ -48,6 +56,24 @@ module.exports = {
         currentFile: action.payload,
       },
       showFileNavigator: false,
+    };
+  },
+
+  deleteFile(state, action) {
+    const slot =
+      state.editor.currentFile === action.payload
+        ? {
+            component: 'Empty',
+            props: {},
+          }
+        : state.slot;
+    return {
+      ...state,
+      slot,
+      fileList: state.fileList.filter(fileName => fileName !== action.payload),
+      fileListFiltered: state.fileListFiltered.filter(
+        fileName => fileName !== action.payload
+      ),
     };
   },
 
@@ -65,8 +91,18 @@ module.exports = {
     };
   },
 
+  filterFiles(state, action) {
+    return {
+      ...state,
+      filteredFiles: action.payload
+        ? this.state.fileNames.filter(fileName =>
+            fileName.includes(action.payload)
+          )
+        : this.state.fileNames,
+    };
+  },
+
   savePathToPosts(state, action) {
-    console.log(action.payload);
     return {
       ...state,
       pathToPosts: action.payload,
@@ -93,6 +129,15 @@ module.exports = {
       notifications: state.notifications.filter(
         notification => notification.time !== action.payload
       ),
+    };
+  },
+
+  filterFileList(state, action) {
+    return {
+      ...state,
+      fileListFiltered: action.payload
+        ? state.fileList.filter(fileName => fileName.includes(action.payload))
+        : state.fileList,
     };
   },
 };

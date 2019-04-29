@@ -14,6 +14,8 @@ global.state = {
   },
   pathToPosts: electonStore.get('pathToPosts'),
   notifications: [],
+  fileList: [],
+  filteredFileList: [],
 };
 
 // Dispatch function.
