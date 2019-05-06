@@ -23,7 +23,7 @@ class Notification extends Component {
     return html`
       <div class=${`notification${fadeOut ? ' fade-out' : ''}`}>
         <h1>Note</h1>
-        ${notification.message + notification.time}
+        ${notification.message}
       </div>
     `;
   }

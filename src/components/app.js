@@ -9,11 +9,11 @@ const Empty = require('./Empty');
 const { appRoot } = require('../lib/appRoot');
 const electronStore = require('../lib/electronStore');
 
-// global.electronStore = electronStore;
+global.electronStore = electronStore;
 
 const directory = electronStore.get('pathToPosts');
 
-electronStore.clear();
+// electronStore.clear();
 
 const routes = { Editor, Settings, Empty };
 
@@ -29,21 +29,8 @@ class App extends Component {
 
   componentDidMount() {
     appRoot.on('stateUpdate', ({ detail: action }) => {
-      const {
-        slot,
-        showFileNavigator,
-        pathToPosts,
-        notifications,
-        fileList,
-        fileListFiltered,
-      } = action.payload;
       this.setState({
-        slot: { ...slot },
-        showFileNavigator,
-        pathToPosts,
-        notifications,
-        fileList,
-        fileListFiltered,
+        ...action.payload,
       });
     });
   }

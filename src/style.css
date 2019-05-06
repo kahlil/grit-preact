@@ -203,8 +203,8 @@ button:hover {
 .notification {
   min-height: 3.4rem;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--color-gray);
-  border-left: 5px solid var(--color-highlight-secondary);
+  border: 1px solid var(--color-highlight-secondary);
+  /* border-left: 5px solid var(--color-highlight-secondary); */
   margin-top: 0.6rem;
   margin-right: 0.5rem;
   opacity: 1;

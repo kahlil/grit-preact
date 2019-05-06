@@ -4,6 +4,7 @@ try {
   console.error(err);
 }
 
+const path = require('path');
 const isDev = require('electron-is-dev');
 
 // Modules to control application life and create native browser window
@@ -28,6 +29,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    backgroundColor: '#1b1b1b',
+    show: false,
   });
 
   // and load the index.html of the app.
@@ -44,6 +47,11 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  mainWindow.on('ready-to-show', function() {
+    mainWindow.show();
+    mainWindow.focus();
   });
 }
 
