@@ -7,7 +7,7 @@ You can edit, create and delete Markdown files as well as trigger a deployment v
 
 ## Get Grit
 
-⚠️ Use it at your own peril, this is **alpha software**. Lots of rough edges. 
+⚠️ Use it at your own peril, this is an **alpha version**. There be 🐉s. 
 
 [Download the latest release](https://github.com/kahlil/grit/releases/download/v1.0.0-alpha.2/Grit-darwin-x64-1.0.0-alpha.2.zip) (macOS only).
 
