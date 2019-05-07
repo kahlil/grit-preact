@@ -17,11 +17,17 @@ You can edit, create and delete Markdown files as well as trigger a deployment v
 
 ![](docs/01-store-path.gif)
 
-- ⬇️ **Store** the path to your folder containing your Markdown files
-- 👓 **Filter** through your Markdown files
-- ✏️ **Edit** any file in that folder
-- ✨ **Create** a new Markdown file for a new post
-- 🚢 **Deploy** your new post via Git with `cmd+u`
+✏️ **Edit** any file in that folder
+
+![](docs/02-edit-file.gif)
+
+✨ **Create** a new Markdown file for a new post
+
+![](docs/03-create-file.gif)
+
+🚢 **Deploy** your new post via Git with `cmd+u`
+
+![](docs/04-publish.gif)
 
 # License
 
