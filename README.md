@@ -15,7 +15,7 @@ You can edit, create and delete Markdown files as well as trigger a deployment v
 
 ⬇️ **Store** the path to your folder containing your Markdown files & 👓 **Filter** through your Markdown files.
 
-![](docs/01-store-path.gif |  width=250)
+![](docs/01-store-path.gif)
 
 ✏️ **Edit** any file in that folder
 
