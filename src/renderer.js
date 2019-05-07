@@ -7,6 +7,7 @@ require('codemirror/mode/gfm/gfm');
 const { ipcRenderer } = require('electron');
 const { html, render } = require('htm/preact');
 const mousetrap = require('mousetrap');
+const isDev = require('electron-is-dev');
 
 const App = require('./components/App');
 const { appRoot } = require('./lib/appRoot');
@@ -19,6 +20,9 @@ mousetrap.bind('command+w', () => dispatch({ type: 'openEmpty' }));
 mousetrap.bind('command+o', () => dispatch({ type: 'openFileNavigator' }));
 mousetrap.bind('command+u', () => dispatch({ type: 'publishBlog' }));
 mousetrap.bind('command+,', () => dispatch({ type: 'openSettings' }));
+if (isDev) {
+  mousetrap.bind('command+alt+e', () => global.electronStore.clear());
+}
 
 // Fire actions from main process.
 ipcRenderer.on('action', (_, action) => {

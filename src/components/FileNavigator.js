@@ -1,5 +1,4 @@
 const { html, Component } = require('htm/preact');
-const directoryListing = require('../lib/fs/directoryListing');
 const debounce = require('../lib/debounce');
 const { dispatch } = require('../lib/state/zeroFux');
 const FileList = require('./FileList');
@@ -20,7 +19,7 @@ class FileNavigator extends Component {
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (this.props.show && prevProps.show !== this.props.show) {
       this.input.focus();
       this.input.value = '';
