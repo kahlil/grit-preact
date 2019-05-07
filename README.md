@@ -19,11 +19,11 @@ You can edit, create and delete Markdown files as well as trigger a deployment v
 
 ✏️ **Edit** any file in that folder
 
-![](docs/02-edit-file.gif)
+![](docs/02-file-editing.gif)
 
 ✨ **Create** a new Markdown file for a new post
 
-![](docs/03-create-file.gif)
+![](docs/03-new-file.gif)
 
 🚢 **Deploy** your new post via Git with `cmd+u`
 
