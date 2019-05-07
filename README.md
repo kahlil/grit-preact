@@ -13,7 +13,7 @@ You can edit, create and delete Markdown files as well as trigger a deployment v
 
 ## Features
 
-<p align="center">⬇️ **Store** the path to your folder containing your Markdown files & 👓 **Filter** through your Markdown files.</p>
+<p align="center">⬇️ <strong>Store</strong> the path to your folder containing your Markdown files & 👓 <strong>Filter</strong> through your Markdown files.</p>
 
 ![](docs/01-store-path.gif)
 
