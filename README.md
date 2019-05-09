@@ -1,6 +1,6 @@
 # Grit
 
-> A Markdown editor for staticly generated blogs.
+> A Markdown editor for statically generated blogs.
 
 This app alows you to manage a directory full of Markdown blog posts more easily. 
 You can edit, create and delete Markdown files as well as trigger a deployment via Git.
