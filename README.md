@@ -5,7 +5,7 @@
 This app alows you to manage a directory full of Markdown blog posts more easily. 
 You can edit, create and delete Markdown files as well as trigger a deployment via Git.
 
-Read about why I built it, [here](https://www.kahlillechelt.com/2019/05/07/announcing-grit-a-markdown-editor-for-blogging-with-a-static-site-generator/).
+Read about why I built it [here](https://www.kahlillechelt.com/2019/05/07/announcing-grit-a-markdown-editor-for-blogging-with-a-static-site-generator/).
 
 ## Get Grit
 
