@@ -29,8 +29,20 @@ class Editor extends Component {
       'Cmd-O': () => {
         dispatch({ type: 'openFileNavigator' });
       },
+      'Cmd-U': () => {
+        dispatch({ type: 'publish' });
+      },
       Esc: () => {
         dispatch({ type: 'openEmpty' });
+      },
+      'Cmd-K': async event => {
+        const selection = this.codeMirrorEditor.getSelection();
+        const clipboardText = await navigator.clipboard.readText();
+        this.codeMirrorEditor.replaceSelection(
+          `[${selection}](${
+            clipboardText.startsWith('http') ? clipboardText : ''
+          })`
+        );
       },
     });
 
